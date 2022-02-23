@@ -1,20 +1,25 @@
+input.onPinPressed(TouchPin.P0, function () {
+    basic.clearScreen()
+    numero_binario_inserito_da_utente = "" + numero_binario_inserito_da_utente + "0"
+    basic.showString(numero_binario_inserito_da_utente)
+})
 input.onButtonPressed(Button.A, function () {
-	
+    basic.clearScreen()
+    basic.showString("" + numero_binario_inserito_da_utente)
 })
 input.onButtonPressed(Button.B, function () {
-    if (switch_mostra_nascondi_decimale == 0) {
-        basic.clearScreen()
-        switch_mostra_nascondi_decimale = 1
-    } else {
-        basic.showString("" + (valore_decimale_da_convertire))
-        switch_mostra_nascondi_decimale = 0
-    }
+    basic.clearScreen()
+    basic.showString("" + valore_decimale_da_convertire)
 })
+input.onPinPressed(TouchPin.P1, function () {
+    basic.clearScreen()
+    numero_binario_inserito_da_utente = "" + numero_binario_inserito_da_utente + "1"
+    basic.showString(numero_binario_inserito_da_utente)
+})
+let numero_binario_inserito_da_utente = ""
 let numero_binario = ""
 let resto = 0
 let valore_decimale_da_convertire = 0
-let switch_mostra_nascondi_decimale = 0
-switch_mostra_nascondi_decimale = 0
 let quoziente_intero = 1
 let valore_decimale_casuale = randint(0, 9)
 valore_decimale_da_convertire = valore_decimale_casuale
@@ -24,4 +29,4 @@ while (quoziente_intero > 0) {
     numero_binario = "" + resto + numero_binario
     valore_decimale_casuale = quoziente_intero
 }
-basic.showString("" + (valore_decimale_da_convertire))
+basic.showString("" + valore_decimale_da_convertire)
