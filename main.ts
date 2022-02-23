@@ -1,11 +1,25 @@
 input.onPinPressed(TouchPin.P0, function () {
     basic.clearScreen()
     numero_binario_inserito_da_utente = "" + numero_binario_inserito_da_utente + "0"
-    basic.showString(numero_binario_inserito_da_utente)
+    basic.showString("" + (numero_binario_inserito_da_utente))
 })
 input.onButtonPressed(Button.A, function () {
     basic.clearScreen()
-    basic.showString("" + numero_binario_inserito_da_utente)
+    basic.showString("" + (numero_binario_inserito_da_utente))
+})
+input.onPinPressed(TouchPin.P2, function () {
+    basic.clearScreen()
+    if (numero_binario_inserito_da_utente == numero_binario) {
+        basic.showIcon(IconNames.Heart)
+    } else {
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . # # # .
+            # . . . #
+            # . . . #
+            `)
+    }
 })
 input.onButtonPressed(Button.B, function () {
     basic.clearScreen()
@@ -14,7 +28,7 @@ input.onButtonPressed(Button.B, function () {
 input.onPinPressed(TouchPin.P1, function () {
     basic.clearScreen()
     numero_binario_inserito_da_utente = "" + numero_binario_inserito_da_utente + "1"
-    basic.showString(numero_binario_inserito_da_utente)
+    basic.showString("" + (numero_binario_inserito_da_utente))
 })
 let numero_binario_inserito_da_utente = ""
 let numero_binario = ""
