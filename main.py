@@ -2,20 +2,27 @@ def on_pin_pressed_p0():
     global numero_binario_inserito_da_utente
     basic.clear_screen()
     numero_binario_inserito_da_utente = "" + numero_binario_inserito_da_utente + "0"
-    basic.show_string(numero_binario_inserito_da_utente)
+    basic.show_string("" + (numero_binario_inserito_da_utente))
 input.on_pin_pressed(TouchPin.P0, on_pin_pressed_p0)
 
 def on_button_pressed_a():
     basic.clear_screen()
-    basic.show_string("" + numero_binario_inserito_da_utente)
+    basic.show_string("" + (numero_binario_inserito_da_utente))
 input.on_button_pressed(Button.A, on_button_pressed_a)
 
-def on_gesture_shake():
-    if numero_binario_inserito_da_utente==numero_binario:
-        pass
+def on_pin_pressed_p2():
+    basic.clear_screen()
+    if numero_binario_inserito_da_utente == numero_binario:
+        basic.show_icon(IconNames.HEART)
     else:
-        pass
-input.on_gesture(Gesture.SHAKE, on_gesture_shake)
+        basic.show_leds("""
+            . . . . .
+                        . . . . .
+                        . # # # .
+                        # . . . #
+                        # . . . #
+        """)
+input.on_pin_pressed(TouchPin.P2, on_pin_pressed_p2)
 
 def on_button_pressed_b():
     basic.clear_screen()
@@ -26,7 +33,7 @@ def on_pin_pressed_p1():
     global numero_binario_inserito_da_utente
     basic.clear_screen()
     numero_binario_inserito_da_utente = "" + numero_binario_inserito_da_utente + "1"
-    basic.show_string(numero_binario_inserito_da_utente)
+    basic.show_string("" + (numero_binario_inserito_da_utente))
 input.on_pin_pressed(TouchPin.P1, on_pin_pressed_p1)
 
 numero_binario_inserito_da_utente = ""

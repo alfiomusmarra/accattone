@@ -23,7 +23,7 @@ input.onPinPressed(TouchPin.P2, function () {
 })
 input.onButtonPressed(Button.B, function () {
     basic.clearScreen()
-    basic.showString("" + valore_decimale_da_convertire)
+    basic.showString("" + (valore_decimale_da_convertire))
 })
 input.onPinPressed(TouchPin.P1, function () {
     basic.clearScreen()
@@ -43,4 +43,4 @@ while (quoziente_intero > 0) {
     numero_binario = "" + resto + numero_binario
     valore_decimale_casuale = quoziente_intero
 }
-basic.showString("" + valore_decimale_da_convertire)
+basic.showString("" + (valore_decimale_da_convertire))
